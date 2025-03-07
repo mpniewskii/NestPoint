@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Apartment</title>
+</head>
+<body>
+    <h1>Add Apartment</h1>
+    <form th:action="@{/apartments/form/create}" th:object="${apartment}" method="post">
+        <label for="street">Street:</label>
+        <input type="text" id="street" th:field="*{address.street}" required>
+
+        <label for="apartmentNumber">Apartment Number:</label>
+        <input type="text" id="apartmentNumber" th:field="*{address.apartmentNumber}" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" th:field="*{address.city}" required>
+
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" th:field="*{address.postalCode}" required>
+
+        <label for="size">Size:</label>
+        <input type="number" id="size" th:field="*{size}" required>
+
+        <label for="rentalPrice">Rental Price:</label>
+        <input type="number" id="rentalPrice" th:field="*{rentalPrice}" required>
+
+        <label for="numberOfRooms">Number of Rooms:</label>
+        <input type="number" id="numberOfRooms" th:field="*{numberOfRooms}" required>
+
+        <label for="furnished">Furnished:</label>
+        <input type="checkbox" id="furnished" th:field="*{furnished}">
+
+        <label for="occupied">Occupied:</label>
+        <input type="checkbox" id="occupied" th:field="*{occupied}">
+
+        <!-- Użyj *{ownerId} zamiast *{owner.id} -->
+        <label for="ownerId">Owner ID:</label>
+        <input type="number" id="ownerId" th:field="*{ownerId}" required>
+
+        <button type="submit">Add Apartment</button>
+    </form>
+</body>
+</html>

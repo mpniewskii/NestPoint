@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <ul>
+        <li><a th:href="@{/owners}">View Owners</a></li>
+        <li><a th:href="@{/tenants}">View Tenants</a></li>
+        <li><a th:href="@{/apartments}">View Apartments</a></li>
+        <li><a th:href="@{/rentals}">View Rentals</a></li>
+    </ul>
+    <h2>Add New</h2>
+    <ul>
+        <li><a th:href="@{/owners/form/create}">Add Owner</a></li>
+        <li><a th:href="@{/tenants/form/create}">Add Tenant</a></li>
+        <li><a th:href="@{/apartments/form/create}">Add Apartment</a></li>
+        <li><a th:href="@{/rentals/form/create}">Add Rental</a></li>
+    </ul>
+    <h2>Delete</h2>
+    <ul>
+        <li><a th:href="@{/owners/form/delete}">Delete Owner</a></li>
+        <li><a th:href="@{/tenants/form/delete}">Delete Tenant</a></li>
+        <li><a th:href="@{/apartments/form/delete}">Delete Apartment</a></li>
+        <li><a th:href="@{/rentals/form/delete}">Delete Rental</a></li>
+    </ul>
+</body>
+</html>

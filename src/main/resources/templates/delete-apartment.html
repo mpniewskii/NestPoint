@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Apartment</title>
+</head>
+<body>
+    <h1>Delete Apartment</h1>
+    <ul>
+        <li th:each="apartment : ${apartments}">
+            <span th:text="${apartment.address}">Address</span>
+            <form th:action="@{/apartments/form/delete/{id}(id=${apartment.id})}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    </ul>
+</body>
+</html>

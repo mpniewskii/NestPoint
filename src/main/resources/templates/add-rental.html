@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Rental</title>
+</head>
+<body>
+    <h1>Add Rental</h1>
+    <form th:action="@{/rentals/form/create}" th:object="${rental}" method="post">
+        <!-- 
+            Tylko apartmentId jest wymagany do pobrania 
+            adresu i ownera z apartamentu w serwisie 
+        -->
+        <label for="apartmentId">Apartment ID:</label>
+        <input type="number" id="apartmentId" th:field="*{apartmentId}" required>
+
+        <!-- Pole tenantId, jeśli chcesz powiązać dany wynajem z konkretnym najemcą -->
+        <label for="tenantId">Tenant ID:</label>
+        <input type="number" id="tenantId" th:field="*{tenantId}">
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" th:field="*{startDate}">
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" th:field="*{endDate}">
+
+        <!-- Status można ustawić w zależności od tego, 
+             czy wynajem jest np. AKTYWNY, ZAKOŃCZONY itp. -->
+        <label for="status">Status:</label>
+        <input type="text" id="status" th:field="*{status}">
+
+        <!-- rentalFees mogą być wpisane przez użytkownika; 
+             totalCost wylicza się automatycznie w RentalService -->
+        <label for="rentalFees">Rental Fees:</label>
+        <input type="number" id="rentalFees" th:field="*{rentalFees}">
+
+        <!-- totalCost i ownerId usuwamy, bo są wyliczane i ustawiane w serwisie -->
+
+        <button type="submit">Add Rental</button>
+    </form>
+</body>
+</html>
